@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu {
+    position: relative;
+    width: 300px;
+}
+
+
+.menu::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 300px;
+    height: 100%;
+    z-index: -1;
+    -webkit-box-shadow: -2px 0px 25px -9px rgba(34, 60, 80, 0.54);
+    -moz-box-shadow: -2px 0px 25px -9px rgba(34, 60, 80, 0.54);
+    box-shadow: -2px 0px 25px -9px rgba(34, 60, 80, 0.54);
+}
+.menu--active::after {
+    width: 600px;
+}
+.menu__list {
+    border-right: 1px solid ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 500px;
+}
+.menu__item {
+    padding: 25px 30px;
+    border-left: 1px solid transparent;
+}
+.menu__item--current .dropdown {
+    display: block;
+}
+.menu__item:hover {
+    border-left: 1px solid #20602f;
+}
+.menu__link {
+    color: #404040;
+    text-decoration: none;
+    font-size: 20px;
+}
+.menu__item:not(:last-child) {
+    border-bottom: 1px solid #c6c6c6;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    width: 300px;
+    padding: 20px;
+
+}
+.dropdown::after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    content: '';
+    width: 280px;
+    height: 100%;
+    z-index: -1;
+}
+.dropdown__item {
+    margin-bottom: 20px;
+}
+.dropdown__item:first-child .dropdown__link {
+    font-weight: 700;
+    font-size: 30px;
+}
+.dropdown__link {
+    color: #404040;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 4px; 
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: #20602f;
+}
+
+/* Модаль */
+
+.modal-wrapper {
+	display: none;
+}
+
+.modal-open {
+    display: block;
+}
+
+/* Закрыть */
+
+.close-ground {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(32, 32, 32, 0);
+}
+
+/* Кнопка */
+
+.main-button {
+    background-color: #20602f;
+    color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.main-button:focus {
+    outline: none;
+}
